@@ -1,0 +1,159 @@
+/* CONTACT SECTION */
+.contact-section {
+  padding: 100px 0;
+  background: #f1f5f9;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.08));
+}
+
+.contact-section h2 {
+  text-align: center;
+
+  font-size: 48px;
+  font-weight: 700;
+
+  margin-bottom: 60px;
+
+  color: #1e293b;
+}
+
+/* 2 COLUMN LAYOUT */
+.contact-wrapper {
+  display: grid;
+
+  grid-template-columns: 1fr 1.5fr;
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+/* LEFT SIDE */
+.contact-info h3 {
+  font-size: 36px;
+
+  margin-bottom: 25px;
+
+  color: #1e293b;
+}
+
+.contact-info p {
+  color: #64748b;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+
+  align-items: center;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+/* RIGHT SIDE FORM */
+.contact-form {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.container{
+    width: 85%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+/* FORM */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* FOCUS */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+
+  border-color: #6366f1;
+
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* ERROR */
+.form-group input:invalid,
+.form-group textarea:invalid {
+  border-color: #e2e8f0;
+}
+
+textarea {
+  resize: vertical;
+
+  min-height: 120px;
+}
+
+/* BUTTON */
+.submit-btn {
+  width: 100%;
+
+  border: none;
+
+  cursor: pointer;
+
+  padding: 18px;
+
+  border-radius: 10px;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  background: linear-gradient(90deg, #6366f1, #4f46e5);
+
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
