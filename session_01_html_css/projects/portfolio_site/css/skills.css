@@ -8,7 +8,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 50px;
-  color: #1e293b;
+  color: var(--color-dark);
 }
 
 .skills-grid {
@@ -36,7 +36,7 @@
 }
 
 .skill-percent {
-  color: #6366f1;
+  color: var(--color-primary);
 }
 
 .skill-bar {
