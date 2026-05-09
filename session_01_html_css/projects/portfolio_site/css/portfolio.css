@@ -1,3 +1,30 @@
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.filter-btn {
+  text-align: center;
+  background: white;
+  color: #7c3aed;
+  border: 2px solid #7c3aed;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #06b6d4;
+  color: white;
+  border-color: #06b6d4;
+}
+
+.filter-btn.active {
+  background: #7c3aed;
+  color: white;
+}
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,4 +39,33 @@
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
+}
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.portfolio-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: 0.3s ease;
+  color: white;
+}
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
 }
