@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>📚 Quản lý Sinh viên</h1>
+        <p class="subtitle">Hệ thống quản lý thông tin sinh viên</p>
+      </header>
+
+      <!-- Statistics -->
+      <section class="statistics">
+        <div class="stat-card">
+          <h3>Tổng SV</h3>
+          <p id="totalStudents" class="stat-value">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Điểm TB</h3>
+          <p id="avgGrade" class="stat-value">0.00</p>
+        </div>
+      </section>
+
+      <!-- Action Bar -->
+      <section class="action-bar">
+        <button id="btnAddStudent" class="btn btn-primary">
+          + Thêm sinh viên
+        </button>
+      </section>
+
+      <!-- Alert Message -->
+      <div id="alertBox" class="alert-box"></div>
+
+      <!-- Students Table -->
+      <section class="table-section">
+        <table id="studentTable" class="student-table">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Mã SV</th>
+              <th>Họ và tên</th>
+              <th>Ngày sinh</th>
+              <th>Lớp</th>
+              <th>Điểm TB</th>
+              <th>Email</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody">
+            <tr class="empty-row">
+              <td colspan="8">Chưa có sinh viên nào</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- Modal Form -->
+    <div id="modalForm" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle">Thêm sinh viên</h2>
+          <button id="btnCloseModal" class="btn-close">&times;</button>
+        </div>
+        <form id="studentForm" class="form">
+          <div class="form-group">
+            <label for="studentId">Mã sinh viên:</label>
+            <input
+              type="text"
+              id="studentId"
+              required
+              placeholder="VD: SV001"
+            />
+          </div>
+          <div class="form-group">
+            <label for="studentName">Họ và tên:</label>
+            <input
+              type="text"
+              id="studentName"
+              required
+              placeholder="Nhập họ và tên"
+            />
+          </div>
+          <div class="form-group">
+            <label for="studentBirthday">Ngày sinh:</label>
+            <input type="date" id="studentBirthday" required />
+          </div>
+          <div class="form-group">
+            <label for="studentClass">Lớp học:</label>
+            <select id="studentClass" required>
+              <option value="">-- Chọn lớp --</option>
+              <option value="CNTT-K66">CNTT-K66</option>
+              <option value="CNTT-K67">CNTT-K67</option>
+              <option value="CNTT-K68">CNTT-K68</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="studentGrade">Điểm trung bình:</label>
+            <input
+              type="number"
+              id="studentGrade"
+              required
+              min="0"
+              max="10"
+              step="0.1"
+              placeholder="0-10"
+            />
+          </div>
+          <div class="form-group">
+            <label for="studentEmail">Email:</label>
+            <input
+              type="email"
+              id="studentEmail"
+              required
+              placeholder="email@example.com"
+            />
+          </div>
+          <div class="form-actions">
+            <button type="button" id="btnCancel" class="btn btn-secondary">
+              Hủy
+            </button>
+            <button type="submit" id="btnSave" class="btn btn-primary">
+              Lưu
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -18,6 +18,7 @@ React:        return <h1>Xin chào</h1>   ← Giống nhau đến 90%!
 ## 📝 Bài 0.1 — Chạy React đầu tiên (5 phút)
 
 ### Bước 1: Tạo project
+
 ```bash
 npm create vite@latest hello-react -- --template react
 cd hello-react
@@ -26,44 +27,53 @@ npm run dev
 ```
 
 ### Bước 2: Xem file `src/App.jsx`
+
 ```jsx
 // Đây là một React Component
 function App() {
-    return (
-        <div>
-            <h1>Xin chào React!</h1>
-            <p>Đây là component đầu tiên của bạn</p>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Xin chào React!</h1>
+      <p>Đây là component đầu tiên của bạn</p>
+    </div>
+  );
 }
 
 export default App;
 ```
 
 ### Bước 3: Thử sửa nội dung
+
 ```jsx
 function App() {
-    return (
-        <div>
-            <h1>Tên của bạn ở đây</h1>
-            <p>Hôm nay là ngày đẹp trời</p>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-            </ul>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Tên của bạn ở đây</h1>
+      <p>Hôm nay là ngày đẹp trời</p>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+      </ul>
+    </div>
+  );
 }
 
 export default App;
 ```
 
 ### Câu hỏi
+
 1. File `.jsx` khác gì file `.js`?
 2. Tại sao phải `export default App`?
 3. Thử xóa `export default` → chuyện gì xảy ra?
+
+### Đáp án
+
+1. File `.jsx` là file JavaScript có thể chứa JSX, tức cú pháp viết giống HTML trong JavaScript. File `.js` bình thường không cho phép JSX trừ khi trình biên dịch được cấu hình để xử lý.
+2. `export default App` để component `App` có thể được nhập (`import App from './App'`) ở file khác.
+3. Nếu xóa `export default`, module sẽ không xuất component mặc định, và khi import `App` từ file đó sẽ gây lỗi, ứng dụng không thể chạy.
 
 ---
 
@@ -87,15 +97,17 @@ export default App;
 
 // JSX (viết lại):
 function StudentCard() {
-    return (
-        <div className="card">         {/* class → className */}
-            <img src="avatar.jpg" alt="Avatar" />  {/* Đóng thẻ */}
-            <h2>Nguyễn Văn Minh</h2>
-            <p>Sinh viên năm 3</p>
-            <label htmlFor="email">Email:</label>   {/* for → htmlFor */}
-            <input type="email" id="email" />       {/* Đóng thẻ */}
-        </div>
-    );
+  return (
+    <div className="card">
+      {" "}
+      {/* class → className */}
+      <img src="avatar.jpg" alt="Avatar" /> {/* Đóng thẻ */}
+      <h2>Nguyễn Văn Minh</h2>
+      <p>Sinh viên năm 3</p>
+      <label htmlFor="email">Email:</label> {/* for → htmlFor */}
+      <input type="email" id="email" /> {/* Đóng thẻ */}
+    </div>
+  );
 }
 
 export default StudentCard;
@@ -104,37 +116,51 @@ export default StudentCard;
 ### Bài tập: Viết lại HTML thành JSX
 
 **Bài 1:** Viết component `UserProfile`
-```html
-<!-- HTML gốc -->
-<div class="profile">
-    <h1>Hồ sơ cá nhân</h1>
-    <img src="photo.jpg" alt="Ảnh đại diện">
-    <table>
-        <tr>
+
+```jsx
+function UserProfile() {
+  return (
+    <div className="profile">
+      <h1>Hồ sơ cá nhân</h1>
+      <img src="photo.jpg" alt="Ảnh đại diện" />
+      <table>
+        <tbody>
+          <tr>
             <td>Họ tên:</td>
             <td>Minh</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Email:</td>
             <td>minh@example.com</td>
-        </tr>
-    </table>
-</div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default UserProfile;
 ```
 
 **Bài 2:** Viết component `ProductInfo`
-```html
-<!-- HTML gốc -->
-<div class="product">
-    <h2>iPhone 15</h2>
-    <p class="price">25.000.000đ</p>
-    <ul>
+
+```jsx
+function ProductInfo() {
+  return (
+    <div className="product">
+      <h2>iPhone 15</h2>
+      <p className="price">25.000.000đ</p>
+      <ul>
         <li>Màn hình: 6.1 inch</li>
         <li>Camera: 48MP</li>
         <li>Pin: 3349 mAh</li>
-    </ul>
-    <button>Mua ngay</button>
-</div>
+      </ul>
+      <button>Mua ngay</button>
+    </div>
+  );
+}
+
+export default ProductInfo;
 ```
 
 ---
